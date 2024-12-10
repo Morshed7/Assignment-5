@@ -3,7 +3,7 @@ function historyList (noakhaliDonateAmount){
     const historyContainer = document.getElementById('history-list');
     const historyIteam = document.createElement('div');
     historyIteam.innerHTML =`
-     <p class="text-xl">Donated ${noakhaliDonateAmount} BDT on ${new Date().toLocaleString()}</p>
+     <p class="text-xl">Donated ${noakhaliDonateAmount} BDT for Flood at Noakhali, Bangladesh on ${new Date().toLocaleString()}</p>
     `
     historyContainer.appendChild(historyIteam);
 }
@@ -14,10 +14,11 @@ function historyListTwo (feniDonateAmount){
     const historyContainer = document.getElementById('history-list');
     const historyItemTwo = document.createElement('div');
     historyItemTwo.innerHTML =`
-     <p class="text-xl">Donated ${feniDonateAmount} BDT on ${new Date().toLocaleString()}</p>
+     <p class="text-xl">Donated ${feniDonateAmount} BDT for Flood at Feni, Bangladesh on ${new Date().toLocaleString()}</p>
     `
     historyContainer.appendChild(historyItemTwo);
 }
+
 
 
 
@@ -26,7 +27,7 @@ function historyListThree (injuredDonateAmount){
     const historyContainer = document.getElementById('history-list');
     const historyItemThree = document.createElement('div');
     historyItemThree.innerHTML =`
-     <p class="text-xl">Donated ${injuredDonateAmount} BDT on ${new Date().toLocaleString()}</p>
+     <p class="text-xl">Donated ${injuredDonateAmount} BDT Aid for Injured in the Quota Movement on ${new Date().toLocaleString()}</p>
     `
     historyContainer.appendChild(historyItemThree);
 }
@@ -69,6 +70,7 @@ noakhalidonateButton.addEventListener('click', function(){
         alert("Please enter a correct amount!");
         return;
     }
+    alert("Thank you for your donation of BDT " + noakhaliDonateAmount);
 
     
    const noakhaliTotalDonateAmount = document.getElementById('noakhali-total-donate-amount');
@@ -99,6 +101,7 @@ noakhalidonateButton.addEventListener('click', function(){
             alert("Please enter a correct amount!");
             return;
         }
+        alert("Thank you for your donation of BDT " + feniDonateAmount);
 
         const feniTotalDonateAmount = document.getElementById('feni-total-donate-amount');
         let feniCurrentAmount = parseInt(feniTotalDonateAmount.textContent); 
@@ -126,7 +129,10 @@ noakhalidonateButton.addEventListener('click', function(){
         if (injuredDonateAmount <= 0 || isNaN(injuredDonateAmount)) {
             alert("Please enter a correct amount!");
             return;
+            
         }
+        alert("Thank you for your donation of BDT " + injuredDonateAmount);
+
 
         const injuredTotalDonateAmount = document.getElementById('injured-total-donate-amount');
         let injuredCurrentAmount = parseInt(injuredTotalDonateAmount.textContent); 
