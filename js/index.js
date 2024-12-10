@@ -20,9 +20,6 @@ function historyListTwo (feniDonateAmount){
 }
 
 
-
-
-
 function historyListThree (injuredDonateAmount){
     const historyContainer = document.getElementById('history-list');
     const historyItemThree = document.createElement('div');
@@ -31,11 +28,6 @@ function historyListThree (injuredDonateAmount){
     `
     historyContainer.appendChild(historyItemThree);
 }
-
-
-
-
-
 
 
 
@@ -59,10 +51,8 @@ document.getElementById('donation-history').addEventListener('click', function()
 })
 
 
-
 const noakhalidonateButton = document.getElementById('noakhali-donate-button');
 noakhalidonateButton.addEventListener('click', function(){
-
 
     const noakhaliDonateAmount = parseFloat(document.getElementById('noakhali-donate-amount').value);
 
