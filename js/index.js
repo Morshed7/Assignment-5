@@ -1,4 +1,36 @@
 
+function historyList (noakhaliDonateAmount){
+    const historyContainer = document.getElementById('history-list');
+    const historyIteam = document.createElement('div');
+    historyIteam.innerHTML =`
+     <p class="h-5 text-3xl">Donated ${noakhaliDonateAmount} BDT on ${new Date().toLocaleString()}</p>
+
+    `
+    historyContainer.appendChild(historyIteam);
+
+}
+
+document.getElementById('donation-btn').addEventListener('click', function(){
+    document.getElementById('history-container').classList.add('hidden');
+    document.getElementById('donation-container').classList.remove('hidden');
+    document.getElementById('donation-history').classList.add('bg-gray-100');
+    document.getElementById('donation-btn').classList.add('bg-lime-300');
+    document.getElementById('donation-history').classList.remove('bg-lime-300');
+    document.getElementById('donation-btn').classList.remove('bg-gray-100');
+})
+
+document.getElementById('donation-history').addEventListener('click', function(){
+    document.getElementById('history-container').classList.remove('hidden');
+    document.getElementById('donation-container').classList.add('hidden');
+    document.getElementById('donation-history').classList.add('bg-lime-300');
+    document.getElementById('donation-history').classList.remove('bg-gray-100');
+    document.getElementById('donation-btn').classList.add('bg-gray-100');
+    document.getElementById('donation-btn').classList.remove('bg-lime-300');
+    
+})
+
+
+
 const noakhalidonateButton = document.getElementById('noakhali-donate-button');
 noakhalidonateButton.addEventListener('click', function(){
 
@@ -24,12 +56,7 @@ noakhalidonateButton.addEventListener('click', function(){
     let restAmount = presentAmount - noakhaliDonateAmount;
     mainBalance.innerHTML = `<img src="assets/coin.png">${restAmount}<span>BDT</span>`;
 
-    //-------------------- history donation amount--------------------------------------------------------
-    // const donationHistory = document.getElementById('donation-history');
-    // let newHistoryEntry = document.createElement('div');
-    // newHistoryEntry.textContent = `Donated: ${donateAmount} BDT`;
-    // donationHistory.appendChild(newHistoryEntry);
-
+    historyList(noakhaliDonateAmount)
 })
 
 // -----------Donate for Flood Relief in Feni,Bangladesh ------------------
@@ -86,3 +113,6 @@ noakhalidonateButton.addEventListener('click', function(){
         mainBalance.innerHTML = `<img src="assets/coin.png">${restAmount}<span>BDT</span>`;
 
     })
+
+
+    

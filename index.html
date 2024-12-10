@@ -21,7 +21,7 @@
                 
                 <div class="flex gap-3 text-xl font-bold">
                     <img src="assets/logo.png" alt="">
-                    <h3>Donate Bangladesh</h3>
+                    <h3>Donate</h3>
                 </div>
 
                 <button id="my-main-balance" class="flex px-5 py-2 rounded gap-3"> 
@@ -32,14 +32,14 @@
         <!-- banner Section -->
         <div>
              <div class="flex justify-center gap-3 mt-10 mb-5">
-            <a href="#donation"> <button class="text-3xl font-bold rounded bg-lime-300 py-3 px-5">Donation</button></a>
-            <button id="donation-history" class="text-3xl font-bold rounded bg-slate-400 py-3 px-5">History</button>
+            <a href="#"> <button id="donation-btn" class="text-3xl font-bold rounded bg-lime-300 py-3 px-5">Donation</button></a>
+            <button id="donation-history" class="text-3xl font-bold rounded bg-gray-100">History</button>
         </div>
         </div>
        
     </header>
 
-    <main>
+    <main id="donation-container">
         <!-- Donate for Flood at Noakhali, Bangladesh-->
 
         <section id="donation" class="md:flex justify-center gap-10 p-10">
@@ -122,9 +122,25 @@
                 <button id="injured-donate-button" class="btn btn-block text-3xl font-bold rounded bg-lime-300 hover:bg-lime-300 outline-none">Donate Now</button>
             </div>
         </section>
+
     </main>
 
-    <footer></footer>
+        <section id="history-container" class="hidden">
+            <div id="history-section" class=" p-5 bg-white rounded shadow-md">
+                <h3 class="text-lg font-bold mb-4 text-center">Donation History</h3>
+                <div id="history-list" class="text-gray-700">
+    
+    
+            </div>
+            </div>
+        </section>
+        <!-- Donation History Section -->
+
+       
+        <footer>
+        
+
+    </footer>
     <script src="js/index.js"></script>
 </body>
 </html>
