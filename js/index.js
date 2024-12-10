@@ -3,12 +3,40 @@ function historyList (noakhaliDonateAmount){
     const historyContainer = document.getElementById('history-list');
     const historyIteam = document.createElement('div');
     historyIteam.innerHTML =`
-     <p class="h-5 text-3xl">Donated ${noakhaliDonateAmount} BDT on ${new Date().toLocaleString()}</p>
-
+     <p class="text-xl">Donated ${noakhaliDonateAmount} BDT on ${new Date().toLocaleString()}</p>
     `
     historyContainer.appendChild(historyIteam);
-
 }
+
+
+
+function historyListTwo (feniDonateAmount){
+    const historyContainer = document.getElementById('history-list');
+    const historyItemTwo = document.createElement('div');
+    historyItemTwo.innerHTML =`
+     <p class="text-xl">Donated ${feniDonateAmount} BDT on ${new Date().toLocaleString()}</p>
+    `
+    historyContainer.appendChild(historyItemTwo);
+}
+
+
+
+
+function historyListThree (injuredDonateAmount){
+    const historyContainer = document.getElementById('history-list');
+    const historyItemThree = document.createElement('div');
+    historyItemThree.innerHTML =`
+     <p class="text-xl">Donated ${injuredDonateAmount} BDT on ${new Date().toLocaleString()}</p>
+    `
+    historyContainer.appendChild(historyItemThree);
+}
+
+
+
+
+
+
+
 
 document.getElementById('donation-btn').addEventListener('click', function(){
     document.getElementById('history-container').classList.add('hidden');
@@ -84,6 +112,7 @@ noakhalidonateButton.addEventListener('click', function(){
         let presentAmount = parseInt(mainBalance.textContent);
         let restAmount = presentAmount - feniDonateAmount;
         mainBalance.innerHTML = `<img src="assets/coin.png">${restAmount}<span>BDT</span>`;
+        historyListTwo(feniDonateAmount);
 
     })
 
@@ -111,6 +140,8 @@ noakhalidonateButton.addEventListener('click', function(){
         let presentAmount = parseInt(mainBalance.textContent);
         let restAmount = presentAmount - injuredDonateAmount;
         mainBalance.innerHTML = `<img src="assets/coin.png">${restAmount}<span>BDT</span>`;
+
+        historyListThree(injuredDonateAmount);
 
     })
 
